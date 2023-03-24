@@ -1,0 +1,136 @@
+table, th,td {
+  border: 1px solid black;
+  font-weight: bold;
+
+}
+@page{
+	size: a3 portrait;
+	margin-top: -0cm;
+	 
+}
+
+
+textarea{
+	width: 29px;
+	height: 15px;
+	overflow: hidden;
+	resize: none;
+	border: none;
+	font-size: 15px;
+	text-align: center;
+	padding: 2px;
+	font-weight: bold;
+}
+#topic{
+	font-size: 18px;
+	text-align: center;
+	font-family: 'bookman old style';
+
+}
+#listed{
+	text-align: center;
+	font-family: 'bookman old style';
+}
+#egrades{
+	color:blue;
+}
+#eremarks{
+	color:blue;
+}
+body {
+  background-image: url('img/temp1.png');
+  background-repeat: no-repeat;
+   /*background-attachment: fixed;*/
+  background-size: cover;
+}
+div{
+	/*background-image: url('img/temp1.png');
+	 
+	background-repeat: no-repeat;*/
+	 
+	margin-left: auto;
+	margin-right: auto;
+	 text-align: center;
+	 
+	background-position: center;
+
+	 
+}
+@media print{
+	table, th{
+   font-size: 15px;
+  page-break-inside: avoid;
+ 
+}
+  
+title{
+	display:none;
+}
+#topic{
+	font-size: 24px;
+	text-align: center;
+	font-family: 'bookman old style';
+
+}
+#downtable1{
+	margin-left: 10% !important;
+}
+ #comment{
+	 
+	margin-left: -10%;
+
+	}
+	       
+	#check{
+	 
+	margin-right: -10%;
+
+	}
+	#check1{
+	 
+	margin-right: -13%;
+
+	} 
+	 #sign{
+	 	margin-right: -25%;
+	 	 
+	 }
+	 #comment1{
+	 	margin-right: -4%;
+	 }
+	 #btn{
+	 	display: none;
+	 }
+	  
+
+  }
+  @media screen and (max-width: 459px) {
+	 
+	  table, th,td {
+	  	width: 100%;
+  border: 1px solid black;
+  font-weight: bold;
+  height: 40%;
+
+}
+#HTMLtoPDF{
+	width: 100%;
+}
+#sidelist{
+	width: 100%;
+	text-align: left;
+	font-size: 17px;
+}
+ #lowtext{
+ 	font-size: 12px;
+ 	width: 100%;
+ }
+
+
+ 
+
+ 
+
+     
+
+}
