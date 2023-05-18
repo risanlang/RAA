@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Favicon & CSS Path-->
+    <link rel="icon" type="image/x-icon" href="/src/CSS/img/temp.png">
+    
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 10px;
+  /*height: 300px; /* Should be removed. Only for demonstration */
+}
+table{
+    width: 100%;
+    border: 1px solid black;
+    border-spacing: 5px;
+}
+body {
+  font-size: 100%;
+}
+div{
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+td{
+    width: 90px;
+}
+ /*ISO Paper Size 
+@page {
+  size: A4 landscape;
+}
+
+/*Size in mm  
+@page {
+  size: 100mm 200mm landscape;
+}
+
+/*Size in inches  
+@page {
+  size: 4in 6in landscape;
+}*/
+</style>
+</head>
+<body>
+
+    
+
+
+
+    <div id="HTMLtoPDF" style="text-align: center;">
+        <h1 id="topic"><img src="/src/CSS/img/focused logo.png" width="40px"> Riverside Adventist Academy</h1>
+     </div>	
+    <h4 style="text-align: center;">STATEMENT OF MARKS FOR ELEMENTARY, 2023</h4>
+    <div class="container text-center">
+        <table class="table table-sm table-borderless text-center" id="HeaderTable">
+            <thead>
+                <tr>
+                    <th>Name : </th>
+                    <td COLSPAN="4"><input type="text" class="form-control" id="Name"></td>
+                    <th>Class : </th>
+                    <td COLSPAN="4"><input type="text" class="form-control" id="Class"></td>
+    
+                    <th>ROLL NO</th>
+                    <td COLSPAN="4"><input type="text" class="form-control" id="Roll_NO"></td>
+                    <th>ID. NO </th>
+                    <td COLSPAN="4"><input type="text" class="form-control" id="ID_NO"></td>
+                </tr>
+            </thead>
+            
+        </table>
+
+    </div>
+   
+    <div class="container-fluid text-center">
+
+    
+        <div class="row justify-content-center">
+        <div class="columns">
+            <table class="table table-hover table-md table-bordered text-center" id="myLTable">
+                        <thead>
+                        <tr>
+                            <th>SL.No</th>
+                            <th>Subjects</th>
+                            <th COLSPAN=3>MidTerm</th>
+                            <th COLSPAN=3>EndTerm</th>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>Ext</th>
+                            <th>Int</th>
+                            <th>Total</th>
+                            <th>Ext</th>
+                            <th>Int</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>English</td>
+                                <td><input type="text" class="form-control" id="MEng_Ext"></td>
+                                <td><input type="text" class="form-control" id="MEng_Int"></td>
+                                <td><input type="text" class="form-control" id="MEng_Total"></td>
+                                <td><input type="text" class="form-control" id="EEng_Ext"></td>
+                                <td><input type="text" class="form-control" id="EEng_Int"></td>
+                                <td><input type="text" class="form-control" id="EEng_Total"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Grammar</td>
+                                <td><input type="text" class="form-control" id="MGra_Ext"></td>
+                                <td><input type="text" class="form-control" id="MGra_Int"></td>
+                                <td><input type="text" class="form-control" id="MGra_Total"></td>
+                                <td><input type="text" class="form-control" id="EGra_Ext"></td>
+                                <td><input type="text" class="form-control" id="EGra_Int"></td>
+                                <td><input type="text" class="form-control" id="EGra_Total"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td style="white-space:nowrap;">MIL*/_______</td>
+                                <td><input type="text" class="form-control" id="MMIL_Ext"></td>
+                                <td><input type="text" class="form-control" id="MMIL_Int"></td>
+                                <td><input type="text" class="form-control" id="MMIL_Total"></td>
+                                <td><input type="text" class="form-control" id="EMIL_Ext"></td>
+                                <td><input type="text" class="form-control" id="EMIL_Int"></td>
+                                <td><input type="text" class="form-control" id="EMIL_Total"></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td style="white-space:nowrap;">Mathematics</td>
+                                <td><input type="text" class="form-control" id="MMth_Ext"></td>
+                                <td><input type="text" class="form-control" id="MMth_Int"></td>
+                                <td><input type="text" class="form-control" id="MMth_Total"></td>
+                                <td><input type="text" class="form-control" id="EMth_Ext"></td>
+                                <td><input type="text" class="form-control" id="EMth_Int"></td>
+                                <td><input type="text" class="form-control" id="EMth_Total"></td>
+                            </tr>
+                        
+                            <tr>
+                                <td>5</td>
+                                <td style="white-space:nowrap;">Science & Technology</td>
+                                <td><input type="text" class="form-control" id="MSC_Ext"></td>
+                                <td><input type="text" class="form-control" id="MSC_Int"></td>
+                                <td><input type="text" class="form-control" id="MSC_Total"></td>
+                                <td><input type="text" class="form-control" id="ESC_Ext"></td>
+                                <td><input type="text" class="form-control" id="ESC_Int"></td>
+                                <td><input type="text" class="form-control" id="ESC_Total"></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td style="white-space:nowrap;">Social Studies</td>
+                                <td><input type="text" class="form-control" id="MSS_Ext"></td>
+                                <td><input type="text" class="form-control" id="MSS_Int"></td>
+                                <td><input type="text" class="form-control" id="MSS_Total"></td>
+                                <td><input type="text" class="form-control" id="ESS_Ext"></td>
+                                <td><input type="text" class="form-control" id="ESS_Int"></td>
+                                <td><input type="text" class="form-control" id="ESS_Total"></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td style="white-space:nowrap;">Health Education</td>
+                                <td><input type="text" class="form-control" id="MHE_Ext"></td>
+                                <td><input type="text" class="form-control" id="MHE_Int"></td>
+                                <td><input type="text" class="form-control" id="MHE_Total"></td>
+                                <td><input type="text" class="form-control" id="EHE_Ext"></td>
+                                <td><input type="text" class="form-control" id="EHE_Int"></td>
+                                <td><input type="text" class="form-control" id="EHE_Total"></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td style="white-space:nowrap;">Hindi</td>
+                                <td><input type="text" class="form-control" id="MH_Ext"></td>
+                                <td><input type="text" class="form-control" id="MH_Int"></td>
+                                <td><input type="text" class="form-control" id="MH_Total"></td>
+                                <td><input type="text" class="form-control" id="EH_Ext"></td>
+                                <td><input type="text" class="form-control" id="EH_Int"></td>
+                                <td><input type="text" class="form-control" id="EH_Total"></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td style="white-space:nowrap;">Moral Science</td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="MMoral_Grade"></td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="EMoral_Grade"></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>EVS*</td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="MEVS_Grade"></td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="FEVS_Grade"></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td style="white-space:nowrap;">GK/Computer Science</td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="MGK_Grade"></td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="FGK_Grade"></td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td style="white-space:nowrap;">Creative Expression</td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="MCE_Grade"></td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="FCE_Grade"></td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td style="white-space:nowrap;">Physical Training</td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="MPT_Grade"></td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="FPT_Grade"></td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td style="white-space:nowrap;">Work Experience</td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="MWE_Grade"></td>
+                                <td COLSPAN=2>Grade</td>
+                                <td><input type="text" class="form-control" id="FWE_Grade"></td>
+                            </tr>
+                            <tr>
+                                <td COLSPAN=4><b>Grand Total</b></td>
+                                <td><input type="text" class="form-control" id="MGT"></td>
+                                <td COLSPAN=2>&nbsp;</td>
+                                <td><input type="text" class="form-control" id="FGT"></td>
+                            </tr>
+                            <tr>
+                                <td COLSPAN=4>Percentage</td>
+                                <td><input type="text" class="form-control" id="MPC"></td>
+                                <td COLSPAN=2>&nbsp;</td>
+                                <td><input type="text" class="form-control" id="FPC"></td>
+                            </tr>
+                            <tr>
+                                <td COLSPAN=2>Working Days</td>
+                                <td><input type="text" class="form-control" id="MWD"></td>
+                                <td>Attendence</td>
+                                <td><input type="text" class="form-control" id="MAtt"></td>
+                                
+                            </tr>
+                            <tr>
+                                <td COLSPAN=4 >Result</td>
+                                <td><input type="text" class="form-control" id="Result"></td>
+                                <td COLSPAN=3>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <th style="height:100px">Mid Term Remarks:</th>
+                                <td COLSPAN="3">&nbsp;</td>
+                                <th style="height:100px">End Term Remarks:</th>
+                                <td COLSPAN="3">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:bottom;text-align: center; height:242px;" COLSPAN="3"><b>Parent's Signature</b></td>
+                                <td style="vertical-align:bottom;text-align: center;" COLSPAN="3"><b>School Seal</b></td>
+                                <td  style="vertical-align:bottom;text-align: center;" COLSPAN="3"><b>Signature of Class Teacher</b></td>
+                            </tr>
+                        </tbody>
+            </table>
+            <p>Note : This Statement of Marks is issued without any Correction/Over writing</p>
+        </div>
+        <div class="columns">
+            <table class="table table-hover table-md table-bordered text-center" id="myRTable">
+                <thead>
+                <tr>
+                    <th COLSPAN=5>Final Average Assessment</th>
+                    <th COLSPAN=3>Personality Assessment</th>
+                </tr>
+                <tr>
+                    <th>Ext</th>
+                    <th>Int</th>
+                    <th>Total</th>
+                    <th>Grade</th>
+                    <th>Point</th>
+                   <th> Trait</th>
+                    <th> MidTerm</th>
+                    <th> EndTerm</th> 
+                
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="form-control" id="AExtEng"></td>
+                        <td><input type="text" class="form-control" id="AIntEng"></td>
+                        <td><input type="text" class="form-control" id="ATot_Eng"></td>
+                        <td><input type="text" class="form-control" id="Eng_Grade"></td>
+                        <td><input type="text" class="form-control" id="Eng_Point"></td>
+                        <td>Deportment</td>
+                        <td><input type="text" class="form-control" id="MDeportment"></td>
+                        <td><input type="text" class="form-control" id="FDeportment"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="AExtGra"></td>
+                        <td><input type="text" class="form-control" id="AIntGra"></td>
+                        <td><input type="text" class="form-control" id="ATot_Gra"></td>
+                        <td><input type="text" class="form-control" id="Gra_Grade"></td>
+                        <td><input type="text" class="form-control" id="Gra_Point"></td>
+                        <td>Industry</td>
+                        <td><input type="text" class="form-control" id="MIndustry"></td>
+                        <td><input type="text" class="form-control" id="EIndustry"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="AExtMIL"></td>
+                        <td><input type="text" class="form-control" id="AIntMIL"></td>
+                        <td><input type="text" class="form-control" id="ATot_MIL"></td>
+                        <td><input type="text" class="form-control" id="MIL_Grade"></td>
+                        <td><input type="text" class="form-control" id="MIL_Point"></td>
+                        <td ROWSPAN="3" COLSPAN="3">Favourite Subjects : <textarea class="form-control" rows="6" id="Favourite_Subjects"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="AExtMaths"></td>
+                        <td><input type="text" class="form-control" id="AIntMaths"></td>
+                        <td><input type="text" class="form-control" id="ATot_Maths"></td>
+                        <td><input type="text" class="form-control" id="Maths_Grade"></td>
+                        <td><input type="text" class="form-control" id="Maths_Point"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="AExtSc"></td>
+                        <td><input type="text" class="form-control" id="AIntSc"></td>
+                        <td><input type="text" class="form-control" id="ATot_Sc"></td>
+                        <td><input type="text" class="form-control" id="Sc_Grade"></td>
+                        <td><input type="text" class="form-control" id="Sc_Point"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="AExtSS"></td>
+                        <td><input type="text" class="form-control" id="AIntSS"></td>
+                        <td><input type="text" class="form-control" id="ATot_SS"></td>
+                        <td><input type="text" class="form-control" id="SS_Grade"></td>
+                        <td><input type="text" class="form-control" id="SS_Point"></td>
+                        <td ROWSPAN="3" COLSPAN="3">Hobbies : <textarea class="form-control" rows="6" id="Hobbies"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="AExtHE"></td>
+                        <td><input type="text" class="form-control" id="AIntHE"></td>
+                        <td><input type="text" class="form-control" id="ATot_HE"></td>
+                        <td><input type="text" class="form-control" id="HE_Grade"></td>
+                        <td><input type="text" class="form-control" id="HE_Point"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="AExtHindi"></td>
+                        <td><input type="text" class="form-control" id="AIntHindi"></td>
+                        <td><input type="text" class="form-control" id="ATot_Hindi"></td>
+                        <td><input type="text" class="form-control" id="Hindi_Grade"></td>
+                        <td><input type="text" class="form-control" id="Hindi_Point"></td>
+                    </tr>
+                    <tr>
+                        <td COLSPAN=3>Grade</td>
+                        <td><input type="text" class="form-control" id="Final_MSc_Grade"></td>
+                        <td><input type="text" class="form-control" id="Final_MSc_Point"></td>
+                        <td ROWSPAN="5" COLSPAN="3">Skills Possessed :  <textarea class="form-control" rows="6" id="Skills_Possessed"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td COLSPAN=3>Grade</td>
+                        <td><input type="text" class="form-control" id="Final_EVS_Grade"></td>
+                        <td><input type="text" class="form-control" id="Final_EVS_Point"></td>
+                    </tr>
+                    <tr>
+                        <td COLSPAN=3>Grade</td>
+                        <td><input type="text" class="form-control" id="Final_GK_Grade"></td>
+                        <td><input type="text" class="form-control" id="Final_GK_Point"></td>
+                    </tr>
+                    <tr>
+                        <td COLSPAN=3>Grade</td>
+                        <td><input type="text" class="form-control" id="Final_CE_Grade"></td>
+                        <td><input type="text" class="form-control" id="Final_CE_Point"></td>
+                    </tr>
+                    <tr>
+                        <td COLSPAN=3>Grade</td>
+                        <td><input type="text" class="form-control" id="Final_PT_Grade"></td>
+                        <td><input type="text" class="form-control" id="Final_PT_Point"></td>
+                    </tr>
+                    <tr>
+                        <td COLSPAN=3>Grade</td>
+                        <td><input type="text" class="form-control" id="Final_WE_Grade"></td>
+                        <td><input type="text" class="form-control" id="Final_WE_Point"></td>
+                        <td style="vertical-align:bottom;text-align: center;" ROWSPAN="5" COLSPAN="3"><b>Signature of Headmaster </b> </td>
+                    </tr>
+                    <tr>
+                        <td COLSPAN=4><b>Grand Total</b></td>
+                        <td><input type="text" class="form-control" id="GrandTotal"></td>
+                    </tr>
+                    <tr>
+                        <td COLSPAN=4>Percentage</td>
+                        <td><input type="text" class="form-control" id="Percentage"></td>
+                    </tr>
+                    <tr>
+                        <td COLSPAN=2>Working Days</td>
+                        <td><input type="text" class="form-control" id="Work_Days"></td>
+                        <td>Attendence</td>
+                        <td><input type="text" class="form-control" id="Attendence"></td>
+                    </tr>
+                    <tr>
+                        <td COLSPAN=4 >Result</td>
+                        <td><input type="text" class="form-control" id="Final_Result"></td>
+                    </tr>
+                    <tr>
+                        <td style="height:60px;" COLSPAN="4">Average Grade <input type="text" class="form-control" id="Average_Grade"></td>
+                        <td COLSPAN="4">Promoted to Class : <input type="text" class="form-control" id="Promoted_To_Class"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td style="height:60px;" COLSPAN="4">Overall Performance <input type="text" class="form-control" id="Overall_Performance"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align:bottom;text-align: center; height:130px;" COLSPAN="3"><b>School Seal</b></td>
+                        <td style="vertical-align:bottom;text-align: center;" COLSPAN="3"><b>Signature of Class Teacher</b></td>
+                        <td  style="vertical-align:bottom;text-align: center;" COLSPAN="3"><b>Signature of Principal</b></td>
+                    </tr>
+                </tbody>
+                </table>
+                <p>Note : This Statement of Marks is issued without any Correction/Over writing</p>
+        </div>
+        </div>
+</div>
+
+<script>
+        const myObjectString1 = localStorage.getItem('StudentDetails');
+        const myObject1 = JSON.parse(myObjectString1);
+        console.log(myObject1); 
+        
+        function MidTermLoad(){
+            document.getElementById("Name").value=myObject1.MidTerm.Name;
+            document.getElementById("Roll_NO").value=myObject1.MidTerm.RollNo;
+            document.getElementById("Class").value=myObject1.Class.toUpperCase();
+            document.getElementById("MEng_Int").value=myObject1.MidTerm.Subjects.English.Int_Eng_Marks;
+            document.getElementById("MEng_Ext").value=myObject1.MidTerm.Subjects.English.Ext_Eng_Marks;
+            document.getElementById("MEng_Total").value=myObject1.MidTerm.Subjects.English.Total_Eng_Marks;
+
+            document.getElementById("MGra_Int").value=myObject1.MidTerm.Subjects.Grammar.Int_Gra_Marks;
+            document.getElementById("MGra_Ext").value=myObject1.MidTerm.Subjects.Grammar.Ext_Gra_Marks;
+            document.getElementById("MGra_Total").value=myObject1.MidTerm.Subjects.Grammar.Total_Gra_Marks;
+
+            document.getElementById("MMIL_Int").value=myObject1.MidTerm.Subjects.MIL.Int_MIL_Marks;
+            document.getElementById("MMIL_Ext").value=myObject1.MidTerm.Subjects.MIL.Ext_MIL_Marks;
+            document.getElementById("MMIL_Total").value=myObject1.MidTerm.Subjects.MIL.Total_MIL_Marks;
+
+
+            document.getElementById("MMth_Int").value=myObject1.MidTerm.Subjects.Maths.Int_Maths_Marks;
+            document.getElementById("MMth_Ext").value=myObject1.MidTerm.Subjects.Maths.Ext_Maths_Marks;
+            document.getElementById("MMth_Total").value=myObject1.MidTerm.Subjects.Maths.Total_Maths_Marks;
+
+            document.getElementById("MSC_Int").value=myObject1.MidTerm.Subjects.Science.Int_Science_Marks;
+            document.getElementById("MSC_Ext").value=myObject1.MidTerm.Subjects.Science.Ext_Science_Marks;
+            document.getElementById("MSC_Total").value=myObject1.MidTerm.Subjects.Science.Total_Science_Marks;
+
+            document.getElementById("MSS_Int").value=myObject1.MidTerm.Subjects.Social_studies.Int_SocialStudies_Marks;
+            document.getElementById("MSS_Ext").value=myObject1.MidTerm.Subjects.Social_studies.Ext_SocialStudies_Marks;
+            document.getElementById("MSS_Total").value=myObject1.MidTerm.Subjects.Social_studies.Total_SocialStudies_Marks;
+
+            document.getElementById("MHE_Int").value=myObject1.MidTerm.Subjects.Health.Int_Health_Marks;
+            document.getElementById("MHE_Ext").value=myObject1.MidTerm.Subjects.Health.Ext_Health_Marks;
+            document.getElementById("MHE_Total").value=myObject1.MidTerm.Subjects.Health.Total_Health_Marks;
+
+            document.getElementById("MH_Int").value=myObject1.MidTerm.Subjects.Hindi.Int_Hindi_Marks;
+            document.getElementById("MH_Ext").value=myObject1.MidTerm.Subjects.Hindi.Ext_Hindi_Marks;
+            document.getElementById("MH_Total").value=myObject1.MidTerm.Subjects.Hindi.Total_Hindi_Marks;
+
+            document.getElementById("MGT").value=myObject1.MidTerm.Grand_Total;
+            document.getElementById("MPC").value=myObject1.MidTerm.Percentage;
+            document.getElementById("MWD").value=myObject1.MidTerm.Working_Days;
+            document.getElementById("MAtt").value=myObject1.MidTerm.Attendence;
+            document.getElementById("Result").value=myObject1.MidTerm.Final_Result;
+
+            //Loading Grades
+            document.getElementById("MMoral_Grade").value=convertGrade(myObject1.MidTerm.Msc_Grade);
+            document.getElementById("MEVS_Grade").value=convertGrade(myObject1.MidTerm.Evs_Grade);
+            document.getElementById("MGK_Grade").value=convertGrade(myObject1.MidTerm.GK_Comp_Grade);
+            document.getElementById("MCE_Grade").value=convertGrade(myObject1.MidTerm.Creative_Expression);
+            document.getElementById("MPT_Grade").value=convertGrade(myObject1.MidTerm.Physical_Training);
+            document.getElementById("MWE_Grade").value=convertGrade(myObject1.MidTerm.work_Expression);
+            
+
+
+
+        }
+       
+
+        //const myObjectString2 = localStorage.getItem('EndTermStudentDetails');
+        //const myObject2 = JSON.parse(myObjectString2);
+        //console.log(myObject2);
+        function EndTermLoad(){
+
+            document.getElementById("EEng_Int").value=myObject1.EndTerm.Subjects.English.Int_Eng_Marks;
+            document.getElementById("EEng_Ext").value=myObject1.EndTerm.Subjects.English.Ext_Eng_Marks;
+            document.getElementById("EEng_Total").value=myObject1.EndTerm.Subjects.English.Total_Eng_Marks;
+
+            document.getElementById("EGra_Int").value=myObject1.EndTerm.Subjects.Grammar.Int_Gra_Marks;
+            document.getElementById("EGra_Ext").value=myObject1.EndTerm.Subjects.Grammar.Ext_Gra_Marks;
+            document.getElementById("EGra_Total").value=myObject1.EndTerm.Subjects.Grammar.Total_Gra_Marks;
+
+
+            document.getElementById("EMIL_Int").value=myObject1.EndTerm.Subjects.MIL.Int_MIL_Marks;
+            document.getElementById("EMIL_Ext").value=myObject1.EndTerm.Subjects.MIL.Ext_MIL_Marks;
+            document.getElementById("EMIL_Total").value=myObject1.EndTerm.Subjects.MIL.Total_MIL_Marks;
+
+
+            document.getElementById("EMth_Int").value=myObject1.EndTerm.Subjects.Maths.Int_Maths_Marks;
+            document.getElementById("EMth_Ext").value=myObject1.EndTerm.Subjects.Maths.Ext_Maths_Marks;
+            document.getElementById("EMth_Total").value=myObject1.EndTerm.Subjects.Maths.Total_Maths_Marks;
+
+            document.getElementById("ESC_Int").value=myObject1.EndTerm.Subjects.Science.Int_Science_Marks;
+            document.getElementById("ESC_Ext").value=myObject1.EndTerm.Subjects.Science.Ext_Science_Marks;
+            document.getElementById("ESC_Total").value=myObject1.EndTerm.Subjects.Science.Total_Science_Marks;
+
+            document.getElementById("ESS_Int").value=myObject1.EndTerm.Subjects.Social_studies.Int_SocialStudies_Marks;
+            document.getElementById("ESS_Ext").value=myObject1.EndTerm.Subjects.Social_studies.Ext_SocialStudies_Marks;
+            document.getElementById("ESS_Total").value=myObject1.EndTerm.Subjects.Social_studies.Total_SocialStudies_Marks;
+
+            document.getElementById("EHE_Int").value=myObject1.EndTerm.Subjects.Health.Int_Health_Marks;
+            document.getElementById("EHE_Ext").value=myObject1.EndTerm.Subjects.Health.Ext_Health_Marks;
+            document.getElementById("EHE_Total").value=myObject1.EndTerm.Subjects.Health.Total_Health_Marks;
+
+            document.getElementById("EH_Int").value=myObject1.EndTerm.Subjects.Hindi.Int_Hindi_Marks;
+            document.getElementById("EH_Ext").value=myObject1.EndTerm.Subjects.Hindi.Ext_Hindi_Marks;
+            document.getElementById("EH_Total").value=myObject1.EndTerm.Subjects.Hindi.Total_Hindi_Marks;
+
+            document.getElementById("FGT").value=myObject1.EndTerm.Grand_Total;
+            document.getElementById("FPC").value=myObject1.EndTerm.Percentage;
+            //document.getElementById("MWD").value=myObject1.EndTerm.Working_Days;
+            //document.getElementById("MAtt").value=myObject1.EndTerm.Attendence;
+            //document.getElementById("Result").value=myObject1.EndTerm.Final_Result;
+
+            //Loading Grades
+            document.getElementById("EMoral_Grade").value=convertGrade(myObject1.EndTerm.Msc_Grade);
+            document.getElementById("FEVS_Grade").value=convertGrade(myObject1.EndTerm.Evs_Grade);
+            document.getElementById("FGK_Grade").value=convertGrade(myObject1.EndTerm.GK_Comp_Grade);
+            document.getElementById("FCE_Grade").value=convertGrade(myObject1.EndTerm.Creative_Expression);
+            document.getElementById("FPT_Grade").value=convertGrade(myObject1.EndTerm.Physical_Training);
+            document.getElementById("FWE_Grade").value=convertGrade(myObject1.EndTerm.work_Expression);
+
+
+
+        }
+        
+        function FinalTermLoad(){
+            //Average External
+            document.getElementById("AExtEng").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.English.Ext_Eng_Marks)+parseInt(myObject1.EndTerm.Subjects.English.Ext_Eng_Marks))/2);
+            document.getElementById("AExtGra").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Grammar.Ext_Gra_Marks)+parseInt(myObject1.EndTerm.Subjects.Grammar.Ext_Gra_Marks))/2);
+            document.getElementById("AExtMIL").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.MIL.Ext_MIL_Marks)+parseInt(myObject1.EndTerm.Subjects.MIL.Ext_MIL_Marks))/2);
+            document.getElementById("AExtMaths").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Maths.Ext_Maths_Marks)+parseInt(myObject1.EndTerm.Subjects.Maths.Ext_Maths_Marks))/2);
+            document.getElementById("AExtSc").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Science.Ext_Science_Marks)+parseInt(myObject1.EndTerm.Subjects.Science.Ext_Science_Marks))/2);
+            document.getElementById("AExtSS").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Social_studies.Ext_SocialStudies_Marks)+parseInt(myObject1.EndTerm.Subjects.Social_studies.Ext_SocialStudies_Marks))/2);
+            document.getElementById("AExtHE").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Health.Ext_Health_Marks)+parseInt(myObject1.EndTerm.Subjects.Health.Ext_Health_Marks))/2);
+            document.getElementById("AExtHindi").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Hindi.Ext_Hindi_Marks)+parseInt(myObject1.EndTerm.Subjects.Hindi.Ext_Hindi_Marks))/2);
+
+
+             //Average External
+             document.getElementById("AIntEng").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.English.Int_Eng_Marks)+parseInt(myObject1.EndTerm.Subjects.English.Int_Eng_Marks))/2);
+            document.getElementById("AIntGra").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Grammar. Int_Gra_Marks)+parseInt(myObject1.EndTerm.Subjects.Grammar. Int_Gra_Marks))/2);
+            document.getElementById("AIntMIL").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.MIL.Int_MIL_Marks)+parseInt(myObject1.EndTerm.Subjects.MIL.Int_MIL_Marks))/2);
+            document.getElementById("AIntMaths").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Maths.Int_Maths_Marks)+parseInt(myObject1.EndTerm.Subjects.Maths.Int_Maths_Marks))/2);
+            document.getElementById("AIntSc").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Science.Int_Science_Marks)+parseInt(myObject1.EndTerm.Subjects.Science.Int_Science_Marks))/2);
+            document.getElementById("AIntSS").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Social_studies.Int_SocialStudies_Marks)+parseInt(myObject1.EndTerm.Subjects.Social_studies.Int_SocialStudies_Marks))/2);
+            document.getElementById("AIntHE").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Health.Int_Health_Marks)+parseInt(myObject1.EndTerm.Subjects.Health.Int_Health_Marks))/2);
+            document.getElementById("AIntHindi").value=Math.floor((parseInt(myObject1.MidTerm.Subjects.Hindi.Int_Hindi_Marks)+parseInt(myObject1.EndTerm.Subjects.Hindi.Int_Hindi_Marks))/2);
+
+
+            //Calculating Total
+            document.getElementById("ATot_Eng").value=parseInt(document.getElementById("AExtEng").value)+parseInt(document.getElementById("AIntEng").value);
+            document.getElementById("ATot_Gra").value=parseInt(document.getElementById("AExtGra").value)+parseInt(document.getElementById("AIntGra").value);
+            document.getElementById("ATot_MIL").value=parseInt(document.getElementById("AExtMIL").value)+parseInt(document.getElementById("AIntMIL").value);
+            document.getElementById("ATot_Maths").value=parseInt(document.getElementById("AExtMaths").value)+parseInt(document.getElementById("AIntMaths").value);
+            document.getElementById("ATot_Sc").value=parseInt(document.getElementById("AExtSc").value)+parseInt(document.getElementById("AIntSc").value);
+            document.getElementById("ATot_SS").value=parseInt(document.getElementById("AExtSS").value)+parseInt(document.getElementById("AIntSS").value);
+            document.getElementById("ATot_HE").value=parseInt(document.getElementById("AExtHE").value)+parseInt(document.getElementById("AIntHE").value);
+            document.getElementById("ATot_Hindi").value=parseInt( document.getElementById("AExtHindi").value)+parseInt(document.getElementById("AIntHindi").value);
+
+            //Calculating Grade
+            document.getElementById("Eng_Grade").value=Grade(parseInt(document.getElementById("ATot_Eng").value));
+            document.getElementById("Gra_Grade").value=Grade(parseInt(document.getElementById("ATot_Gra").value));
+            document.getElementById("MIL_Grade").value=Grade(parseInt(document.getElementById("ATot_MIL").value));
+            document.getElementById("Maths_Grade").value=Grade(parseInt(document.getElementById("ATot_Maths").value));
+            document.getElementById("Sc_Grade").value=Grade(parseInt(document.getElementById("ATot_Sc").value));
+            document.getElementById("SS_Grade").value=Grade(parseInt(document.getElementById("ATot_SS").value));
+            document.getElementById("HE_Grade").value=Grade(parseInt(document.getElementById("ATot_HE").value));
+            document.getElementById("Hindi_Grade").value=Grade(parseInt(document.getElementById("ATot_Hindi").value));
+
+            //Calculating Points
+            document.getElementById("Eng_Point").value=Points(parseInt(document.getElementById("ATot_Eng").value));
+            document.getElementById("Gra_Point").value=Points(parseInt(document.getElementById("ATot_Gra").value));
+            document.getElementById("MIL_Point").value=Points(parseInt(document.getElementById("ATot_MIL").value));
+            document.getElementById("Maths_Point").value=Points(parseInt(document.getElementById("ATot_Maths").value));
+            document.getElementById("Sc_Point").value=Points(parseInt(document.getElementById("ATot_Sc").value));
+            document.getElementById("SS_Point").value=Points(parseInt(document.getElementById("ATot_SS").value));
+            document.getElementById("HE_Point").value=Points(parseInt(document.getElementById("ATot_HE").value));
+            document.getElementById("Hindi_Point").value=Points(parseInt(document.getElementById("ATot_Hindi").value));
+
+            //Calculating Grades
+            var temp=Math.floor((myObject1.MidTerm.Msc_Grade+myObject1.EndTerm.Msc_Grade)/2);
+            document.getElementById("Final_MSc_Grade").value=convertGrade(temp);
+            document.getElementById("Final_MSc_Point").value= Points(temp);
+
+            temp=Math.floor((myObject1.MidTerm.Evs_Grade+myObject1.EndTerm.Evs_Grade)/2);
+            document.getElementById("Final_EVS_Grade").value=convertGrade(temp);
+            document.getElementById("Final_EVS_Point").value=Points(temp);
+
+            
+            temp=Math.floor((myObject1.MidTerm.GK_Comp_Grade+myObject1.EndTerm.GK_Comp_Grade)/2);
+            document.getElementById("Final_GK_Grade").value=convertGrade(temp);
+            document.getElementById("Final_GK_Point").value=Points(temp);
+
+            temp=Math.floor((myObject1.MidTerm.Creative_Expression+myObject1.EndTerm.Creative_Expression)/2);
+            document.getElementById("Final_CE_Grade").value=convertGrade(temp);
+            document.getElementById("Final_CE_Point").value=Points(temp);
+
+            temp=Math.floor((myObject1.MidTerm.Physical_Training+myObject1.EndTerm.Physical_Training)/2);
+            document.getElementById("Final_PT_Grade").value=convertGrade(temp);
+            document.getElementById("Final_PT_Point").value=Points(temp);
+
+            temp=Math.floor((myObject1.MidTerm.work_Expression+myObject1.EndTerm.work_Expression)/2);
+            document.getElementById("Final_WE_Grade").value=convertGrade(temp);
+            document.getElementById("Final_WE_Point").value=Points(temp);
+
+            document.getElementById("GrandTotal").value=parseInt(document.getElementById("ATot_Eng").value)+parseInt(document.getElementById("ATot_Gra").value)+parseInt(document.getElementById("ATot_MIL").value)+parseInt(document.getElementById("ATot_Maths").value)+parseInt(document.getElementById("ATot_Sc").value)+parseInt(document.getElementById("ATot_SS").value)+parseInt(document.getElementById("ATot_HE").value)+parseInt(document.getElementById("ATot_Hindi").value);
+            document.getElementById("Percentage").value=parseInt(document.getElementById("GrandTotal").value)/8;
+
+            document.getElementById("Work_Days").value=myObject1.EndTerm.Working_Days;
+            document.getElementById("Attendence").value=myObject1.EndTerm.Attendence+myObject1.MidTerm.Attendence;
+
+           
+        }
+        
+        
+        function Grade(grade){
+
+            if (grade >= 0 && grade <= 20) {
+                return "E";
+            }
+            if (grade >= 21 && grade <= 29) {
+                return "D2";
+            }
+            if (grade >= 30 && grade <= 39) {
+                return "D1";
+            }
+            if (grade>= 40 && grade <= 49) {
+                return "C2";
+            }
+            if (grade>= 50 && grade <= 59){
+                return "C1";
+            }
+            if (grade>= 60 && grade <= 69) {
+                return "B2";
+            }
+            if (grade>= 70 && grade <= 79){
+                return "B1";
+            }
+            if (grade>= 80 && grade <= 89){
+                return "A2";
+            }
+            if (grade>= 90 && grade <= 100){
+                return "A1";
+            }
+
+        }
+
+
+        function Points(grade){
+
+                if (grade >= 0 && grade <= 20) {
+                    return "1";
+                }
+                if (grade >= 21 && grade <= 29) {
+                    return "2";
+                }
+                if (grade >= 30 && grade <= 39) {
+                    return "3";
+                }
+                if (grade>= 40 && grade <= 49) {
+                    return "4";
+                }
+                if (grade>= 50 && grade <= 59){
+                    return "5";
+                }
+                if (grade>= 60 && grade <= 69) {
+                    return "6";
+                }
+                if (grade>= 70 && grade <= 79){
+                    return "7";
+                }
+                if (grade>= 80 && grade <= 89){
+                    return "8";
+                }
+                if (grade>= 90 && grade <= 100){
+                    return "9";
+                }
+
+        }
+
+        // Function that converts the grade, returning the message for minor subjects
+        function convertGrade(grade) {
+            if (grade >= 0 && grade <= 35) {
+                return "E";
+            }
+            if (grade >= 36 && grade <= 55) {
+                return "D";
+            }
+            if (grade >= 56 && grade <= 75) {
+                return "C";
+            }
+            if (grade>= 76 && grade <= 85) {
+                return "B";
+            }
+            if (grade>= 86 && grade <= 100){
+                return "A";
+            }
+        }
+        MidTermLoad();
+        EndTermLoad();
+        FinalTermLoad();
+                            
+
+ </script>   
+
+</body>  
+<button onclick="window.print()">Print</button>
+</html>

@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Marks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    
+
+    <!--Favicon & CSS Path-->
+    <link rel="icon" type="image/x-icon" href="/src/CSS/img/temp.png">
+    <link rel="stylesheet" type="text/css" href="/src/CSS/main.css">
+</head>
+<body id="identifier">
+
+   <!--Navigation animation bar--->
+	<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#Welcome"><p id="para"><span class="glyphicon glyphicon-user"></span></p></a>
+    <a href="index.html">Enter Marks</a>
+    <a href="preview.html">Preview</a>
+    <a href="ListToPrint.html">List</a>
+    <a href="#" id="link"><span class="glyphicon glyphicon-log-out"></span>Logout</a>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu</span>
+
+  
+
+    <div id="HTMLtoPDF">
+        <h1 id="topic"><img src="/src/CSS/img/focused logo.png" width="40px"> Riverside Adventist Academy</h1>
+        <p id="listed"><b>Elementary & Secondary Mid-Term Assessment Records for 2023</b></p>
+     </div>
+     <div class="container">
+        <form class="form-inline">
+            Class     
+            <select id="Sclass" name="class">
+                <option value="one">I</option>
+                <option value="two">II</option>
+                <option value="three">III</option>
+                <option value="four">IV</option>
+                <option value="five">V</option>
+                <option value="six">VI</option>
+                <option value="seven">VII</option>
+                <option value="eight">VIII</option>
+                <option value="nine">IX</option>
+                <option value="ten">X</option>
+                <option value="eleven">XI</option>
+                <option value="twelve">XII</option>
+            </select>
+            Section
+            <select id="Ssection" name="section">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+            </select>
+            
+            Term
+            <select id="STerm" name="Term">
+                <option value="MidTerm">MidTerm</option>
+                <option value="EndTerm">EndTerm</option>
+            </select>
+            <button type="button" class="btn btn-primary"id="Get">Get</button>
+
+        </form>
+     </div> 
+     <div class="container-fluid">
+        <div class="col-sm-11 table-responsive-sm">
+            <table class="table table-hover table-sm table-bordered text-center" id="myTable">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Rollno</th>
+                        <th>Name</th>
+                        <th COLSPAN=3>English</th>
+                        <th COLSPAN=3>Grammar</th>
+                        <th COLSPAN=3>MIL/Garo</th>
+                        <th COLSPAN=3>Maths</th>
+                        <th COLSPAN=3>Science</th>
+                        <th COLSPAN=3>Social</th>
+                        <th COLSPAN=3>Health</th>
+                        <th COLSPAN=3>Hindi</th>
+                        <th>M/Sc</th>
+                        <th>EVS</th>
+                        <th>GK/COMP</th>
+                        <th>CE</th>
+                        <th>PT</th>
+                        <th>WE</th>
+                        <th>Working Days</th>
+                        <th>Attendence</th>
+                        <th>Grand Total</th>
+                        <th>Percentage</th>
+                        <th>Result</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>Int</td>
+                        <td>Ext</td>
+                        <td>Tot</td>
+                        <td>Int</td>
+                        <td>Ext</td>
+                        <td>Tot</td>
+                        <td>Int</td>
+                        <td>Ext</td>
+                        <td>Tot</td>
+                        <td>Int</td>
+                        <td>Ext</td>
+                        <td>Tot</td>
+                        <td>Int</td>
+                        <td>Ext</td>
+                        <td>Tot</td>
+                        <td>Int</td>
+                        <td>Ext</td>
+                        <td>Tot</td>
+                        <td>Int</td>
+                        <td>Ext</td>
+                        <td>Tot</td>
+                        <td>Int</td>
+                        <td>Ext</td>
+                        <td>Tot</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+        
+                </thead>
+                <tbody id="tbody1">
+
+                </tbody>
+    
+         </div>  
+         </table>
+
+
+
+
+
+
+            <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Student Detail</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+           <!--This is a Table on the Left--> 
+          <table class="table table-hover table-sm table-bordered" >
+              <thead class="thead-dark">
+                  <tr>
+                      <td><input type="number" class="form-control" id="RollNo" placeholder="RollNo"></td>
+                      <td>Student Name</td>
+                      <td colspan="4"><input type="text" class="form-control" id="student_name" required></td>
+                      
+                  </tr>
+                    <tr>
+                      <th>Subject Name</th>
+                      <th>Internal Marks</th>
+                      <th>External Marks</th>
+                      <th>Total Marks</th>
+                    </tr>
+              </thead>
+          <tbody>
+                <tr>
+                  <td>English</td>
+                  <td><input type="text" class="form-control form-control-sm" id="Int_Eng_marks" required ></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Ext_Eng_marks" required></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Total_Eng_marks"></td>
+                </tr>
+                <tr>
+                 <td>Grammar</td>
+                  <td><input type="text" class="form-control form-control-sm" id="Int_Gra_marks" required></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Ext_Gra_marks" required></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Total_Gra_marks"></td>
+                </tr>
+                <tr>
+                  <td>MIL*/Garo</td>
+                  <td><input type="text" class="form-control form-control-sm" id="Int_MIL_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Ext_MIL_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Total_MIL_marks"></td>
+                </tr>
+                <tr>
+                  <td>Mathematics</td>
+                  <td><input type="text" class="form-control form-control-sm" id="Int_Mth_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Ext_Mth_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Total_Mth_marks"></td>
+                </tr>
+                <tr>
+                  <td>Science & Technology</td>
+                  <td><input type="text" class="form-control form-control-sm" id="Int_ST_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Ext_ST_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Total_ST_marks"></td>
+                </tr>
+                <tr>
+                  <td>Social Studies</td>
+                  <td><input type="text" class="form-control form-control-sm" id="Int_SS_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Ext_SS_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Total_SS_marks"></td>
+                </tr>
+                <tr>
+                  <td>Health Education</td>
+                  <td><input type="text" class="form-control form-control-sm" id="Int_HE_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Ext_HE_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Total_HE_marks"></td>
+                </tr>
+                <tr>
+                  <td>Hindi</td>
+                  <td><input type="text" class="form-control form-control-sm" id="Int_Hindi_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Ext_Hindi_marks"></td>
+                  <td><input type="text" class="form-control form-control-sm" id="Total_Hindi_marks"></td>
+                </tr>
+          </tbody>
+         </table>
+         
+         <!--Grades Table-->
+         <table class="table table-hover table-sm table-bordered">
+            <thead class="thead-light">
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Grades</th>
+                    <th></th>
+                  </tr>
+            </thead>
+              <tbody>
+                        <tr>
+                              <td>M/Sc</td>
+                              <td><input type="text" class="form-control form-control-sm" id="M_Sc_Grade"></td>
+                              <td>EVS</td>
+                              <td><input type="text" class="form-control form-control-sm" id="EVS_Grade"></td>
+                          </tr>
+                        <tr>
+                              <td>GK/COMP</td>
+                              <td><input type="text" class="form-control form-control-sm" id="GK_Comp_Grade"></td>
+                              <td>CE</td>
+                              <td><input type="text" class="form-control form-control-sm" id="CE_Grade"></td>
+                        </tr>
+                        <tr>
+                              <td>PT</td>
+                              <td><input type="text" class="form-control form-control-sm" id="PT_Grade"></td>
+                              <td>WE</td>
+                              <td><input type="text" class="form-control form-control-sm" id="WE_Grade"></td>
+                        </tr>
+                        <tr>
+                              <td>Working Days</td>
+                              <td><input type="text" class="form-control form-control-sm" id="Working_Days"></td>
+                              <td>Attendence</td>
+                              <td><input type="text" class="form-control form-control-sm" id="Attendence"></td>
+                        </tr>
+                        <tr>
+                              <td>Grand Total</td>
+                              <td><input type="number" class="form-control form-control-sm" id="Grand_Total"></td>
+                              <td>Percentage</td>
+                              <td><input type="number" class="form-control form-control-sm" id="Percentage"></td>
+                        </tr>
+                        <tr>
+                              <td></td>
+                              <td></td>
+                              <td>Result</td>
+                              <td><input type="text" class="form-control form-control-sm" id="Result"></td>
+                        </tr>
+              </tbody>
+      
+          </table>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" id="UpdateBtn">Update</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+    </div>
+
+     <script>
+        
+        function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }  
+     </script>   
+    <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+            import { getAuth,signOut,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+            import{collection,getDocs,getFirestore,doc, deleteDoc,setDoc,query,startAfter,endBefore,limit,onSnapshot,orderBy} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyArzB0J5a5kFF56wi07I4rmHkLTU6Qcz-o",
+                authDomain: "raaresults.firebaseapp.com",
+                databaseURL: "https://raaresults-default-rtdb.asia-southeast1.firebasedatabase.app",
+                projectId: "raaresults",
+                storageBucket: "raaresults.appspot.com",
+                messagingSenderId: "839015394886",
+                appId: "1:839015394886:web:1cae38f1c2c17e49062447",
+                measurementId: "G-1ZPCEHQH0N"
+            };
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+
+             //init services
+            const db=getFirestore(app);
+            const auth = getAuth();
+
+            function ClearThePopulatedTable(){
+                var table = document.getElementById("myTable");
+                            var rowCount = table.rows.length;
+                            console.log("The rowCount is :",rowCount);
+                            while(rowCount>2){
+                                table.deleteRow(--rowCount);
+                                rowCount = table.rows.length;
+                                console.log("The rowCount is :",rowCount);
+
+                            }
+
+            }
+
+
+
+            //finding element from preview page
+            document.getElementById("Get").addEventListener("click",Fetch);
+            document.getElementById("UpdateBtn").addEventListener("click", Update_Data);
+            document.getElementById("link").addEventListener("click",flogout);
+            document.getElementById("identifier").addEventListener("load",onAuthStateChanged);
+
+
+
+            onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+          console.log("User that is logged in is",uid);
+          console.log(user.email);
+          document.getElementById("para").innerHTML="Welcome"+" "+user.email;
+          // ...
+        } else {
+          // User is signed out
+          // ...
+          //console.log("Sorry you have not logged in");
+          document.getElementById("Get").disabled = true;
+          window.location.href = "Login.html";
+        }
+      });
+
+      function flogout(){
+        auth.signOut().then(()=>{
+          console.log("User is SignOut");
+          window.location.href = "Login.html";
+      });
+      }
+
+            function Update_Data(){
+
+                var c = document.getElementById("Sclass").value;
+                console.log("Class_"+c);
+                var section = document.getElementById("Ssection").value;
+                console.log("Section_"+section);
+                var term = document.getElementById("STerm").value;
+                console.log(term);
+
+
+
+                //Getting the data to update from the model
+                var RTBU=document.getElementById("RollNo").value;
+                var name=document.getElementById("student_name").value;
+                
+                var Int_Eng=document.getElementById("Int_Eng_marks").value;
+                var Ext_Eng=document.getElementById("Ext_Eng_marks").value;
+                var Total_Eng=document.getElementById("Total_Eng_marks").value;
+                
+                var Int_Gra=document.getElementById("Int_Gra_marks").value;
+                var Ext_Gra=document.getElementById("Ext_Gra_marks").value;
+                var Total_Gra=document.getElementById("Total_Gra_marks").value;
+                
+                var Int_MIL=document.getElementById("Int_MIL_marks").value;
+                var Ext_MIL=document.getElementById("Ext_MIL_marks").value;
+                var Total_MIL=document.getElementById("Total_MIL_marks").value;
+                
+                var Int_Mth=document.getElementById("Int_Mth_marks").value;
+                var Ext_Mth=document.getElementById("Ext_Mth_marks").value;
+                var Total_Mth=document.getElementById("Total_Mth_marks").value;
+                
+                var Int_ST=document.getElementById("Int_ST_marks").value;
+                var Ext_ST=document.getElementById("Ext_ST_marks").value;
+                var Total_ST=document.getElementById("Total_ST_marks").value;
+                
+                var Int_SS=document.getElementById("Int_SS_marks").value;
+                var Ext_SS=document.getElementById("Ext_SS_marks").value;
+                var Total_SS=document.getElementById("Total_SS_marks").value;
+                
+                var Int_HE=document.getElementById("Int_HE_marks").value;
+                var Ext_HE=document.getElementById("Ext_HE_marks").value;
+                var Total_HE=document.getElementById("Total_HE_marks").value;
+
+
+                var Int_Hindi=document.getElementById("Int_Hindi_marks").value;
+                var Ext_Hindi=document.getElementById("Ext_Hindi_marks").value;
+                var Total_Hindi=document.getElementById("Total_Hindi_marks").value;
+                //Grade Marks
+                var Msc=document.getElementById("M_Sc_Grade").value;
+                var Evs=document.getElementById("EVS_Grade").value;
+                var Gk_Comp=document.getElementById("GK_Comp_Grade").value;
+                var CE=document.getElementById("CE_Grade").value;
+                var PT=document.getElementById("PT_Grade").value;
+                var WE=document.getElementById("WE_Grade").value;
+                var WD=document.getElementById("Working_Days").value;
+                var Attd=document.getElementById("Attendence").value;
+                var Gt=document.getElementById("Grand_Total").value;
+                var pc=document.getElementById("Percentage").value;
+                var Result=document.getElementById("Result").value;
+
+
+
+
+
+
+
+
+                const docRef = doc(db, "Class_"+c,"Section_"+section,term, RTBU);
+                const data={
+
+                    RollNo:parseInt(RTBU),
+                    Name:name,
+                    Msc_Grade: parseInt(Msc),
+                    Evs_Grade: parseInt(Evs),
+                    GK_Comp_Grade: parseInt(Gk_Comp),
+                    Creative_Expression: parseInt(CE),
+                    Physical_Training: parseInt(PT),
+                    work_Expression: parseInt(WE),
+                    Working_Days: parseInt(WD),
+                    Attendence:parseInt(Attd),
+                    Grand_Total:parseInt(Gt),
+                    Percentage:parseFloat(pc).toFixed(2),
+                    Final_Result:Result.toUpperCase(),
+                    Subjects :{
+                
+                        English : {
+                        Int_Eng_Marks: parseInt(Int_Eng),
+                        Ext_Eng_Marks: parseInt(Ext_Eng),
+                        Total_Eng_Marks: parseInt(Total_Eng)
+                        },
+                
+                        Grammar : {
+                        Int_Gra_Marks: parseInt(Int_Gra),
+                        Ext_Gra_Marks: parseInt(Ext_Gra),
+                        Total_Gra_Marks: parseInt(Total_Gra)
+                        },
+                
+                        MIL : {
+                        Int_MIL_Marks: parseInt(Int_MIL),
+                        Ext_MIL_Marks: parseInt(Ext_MIL),
+                        Total_MIL_Marks: parseInt(Total_MIL)
+                        },
+                        Maths : {
+                        Int_Maths_Marks: parseInt(Int_Mth),
+                        Ext_Maths_Marks: parseInt(Ext_Mth),
+                        Total_Maths_Marks: parseInt(Total_Mth)
+                        },
+                        Science : {
+                        Int_Science_Marks: parseInt(Int_ST),
+                        Ext_Science_Marks: parseInt(Ext_ST),
+                        Total_Science_Marks: parseInt(Total_ST)
+                        },
+                
+                        Social_studies: {
+                        Int_SocialStudies_Marks: parseInt(Int_SS),
+                        Ext_SocialStudies_Marks: parseInt(Ext_SS),
+                        Total_SocialStudies_Marks: parseInt(Total_SS)
+                        },
+                        Health : {
+                        Int_Health_Marks: parseInt(Int_HE),
+                        Ext_Health_Marks: parseInt(Ext_HE),
+                        Total_Health_Marks: parseInt(Total_HE)
+                        },
+                        Hindi : {
+                        Int_Hindi_Marks: parseInt(Int_Hindi),
+                        Ext_Hindi_Marks: parseInt(Ext_Hindi),
+                        Total_Hindi_Marks: parseInt(Total_Hindi)
+                        }
+                        
+                    }
+                    
+                };
+                setDoc(docRef,data,{ merge:true })
+                .then(docRef => {
+                    console.log("Document Field has been updated successfully");
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "none";
+                    const unsub=onSnapshot(doc(db,"Class_"+c,"Section_"+section,term, RTBU),(doc)=>{
+                      
+                        Filling_Table(doc.id,doc.data(),parseInt(RTBU)+1);
+                        document.getElementById("myTable").deleteRow(parseInt(RTBU)+2);
+                    });
+                    /*var table = document.getElementById("myTable");
+                    var rowCount = table.rows.length;
+                    console.log("The rowCount is :",rowCount);
+                    while(rowCount>2){
+                        table.deleteRow(--rowCount);
+                        rowCount = table.rows.length;
+                        console.log("The rowCount is :",rowCount);
+
+                    }
+                    Fetch();*/
+                })
+                .catch(error =>{
+                    console.log(error);
+                })
+
+            }
+
+            function myEditFunction(ID){
+                //Registering the addEventListener
+                /*document.getElementById("Total_Eng_marks").addEventListener("click", Total_Eng_Function);
+                document.getElementById("Total_Gra_marks").addEventListener("click", Total_Gra_Function);
+                document.getElementById("Total_MIL_marks").addEventListener("click", Total_MIL_Function);
+                document.getElementById("Total_Mth_marks").addEventListener("click", Total_Mth_Function);
+                    
+                document.getElementById("Total_ST_marks").addEventListener("click", Total_ST_Function);
+                document.getElementById("Total_SS_marks").addEventListener("click", Total_SS_Function);
+                document.getElementById("Total_HE_marks").addEventListener("click", Total_HE_Function);
+                document.getElementById("Total_Hindi_marks").addEventListener("click", Total_Hindi_Function);
+                document.getElementById("Grand_Total").addEventListener("click",Grand_Total);
+                document.getElementById("Percentage").addEventListener("click",Percentage);*/
+
+
+
+
+
+
+
+
+
+
+
+
+                    // Get the modal
+                    var modal = document.getElementById("myModal");
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById(ID);
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks the button, open the modal 
+                    btn.onclick = function() {
+                    modal.style.display = "block";
+                    let Cell = document.getElementById("myTable").rows[ID].cells;
+                    document.getElementById("RollNo").value=Cell[0].innerHTML;
+                    document.getElementById("student_name").value=Cell[1].innerHTML;
+                    //Filling English Marks
+                    document.getElementById("Int_Eng_marks").value=Cell[2].innerHTML;
+                    document.getElementById("Ext_Eng_marks").value=Cell[3].innerHTML;
+                    document.getElementById("Total_Eng_marks").value=Cell[4].innerHTML;
+
+
+                    //Filling Grammar Marks
+                    document.getElementById("Int_Gra_marks").value=Cell[5].innerHTML;
+                    document.getElementById("Ext_Gra_marks").value=Cell[6].innerHTML;
+                   document.getElementById("Total_Gra_marks").value=Cell[7].innerHTML;
+
+                    //Filling MIL Marks
+                    document.getElementById("Int_MIL_marks").value=Cell[8].innerHTML;
+                    document.getElementById("Ext_MIL_marks").value=Cell[9].innerHTML;
+                   document.getElementById("Total_MIL_marks").value=Cell[10].innerHTML;
+
+
+                    //Filling Maths Marks
+                    document.getElementById("Int_Mth_marks").value=Cell[11].innerHTML;
+                    document.getElementById("Ext_Mth_marks").value=Cell[12].innerHTML;
+                    document.getElementById("Total_Mth_marks").value=Cell[13].innerHTML;
+
+                    //Filling Science Marks
+                    document.getElementById("Int_ST_marks").value=Cell[14].innerHTML;
+                    document.getElementById("Ext_ST_marks").value=Cell[15].innerHTML;
+                    document.getElementById("Total_ST_marks").value=Cell[16].innerHTML;
+
+                    //Filling Social Studies Marks
+                    document.getElementById("Int_SS_marks").value=Cell[17].innerHTML;
+                    document.getElementById("Ext_SS_marks").value=Cell[18].innerHTML;
+                    document.getElementById("Total_SS_marks").value=Cell[19].innerHTML;
+
+
+                    //Filling Health Marks
+                    document.getElementById("Int_HE_marks").value=Cell[20].innerHTML;
+                    document.getElementById("Ext_HE_marks").value=Cell[21].innerHTML;
+                    document.getElementById("Total_HE_marks").value=Cell[22].innerHTML;
+
+                    //Filling Hindi Marks
+                    document.getElementById("Int_Hindi_marks").value=Cell[23].innerHTML;
+                    document.getElementById("Ext_Hindi_marks").value=Cell[24].innerHTML;
+                    document.getElementById("Total_Hindi_marks").value=Cell[25].innerHTML;
+
+                    //Getting The Grades
+                    document.getElementById("M_Sc_Grade").value=Cell[26].innerHTML;
+                    document.getElementById("EVS_Grade").value=Cell[27].innerHTML;
+                    document.getElementById("GK_Comp_Grade").value=Cell[28].innerHTML;
+
+                    document.getElementById("CE_Grade").value=Cell[29].innerHTML;
+                    document.getElementById("PT_Grade").value=Cell[30].innerHTML;
+                    document.getElementById("WE_Grade").value=Cell[31].innerHTML;
+
+                    document.getElementById("Working_Days").value=Cell[32].innerHTML;
+                    document.getElementById("Attendence").value=Cell[33].innerHTML;
+                    document.getElementById("Grand_Total").value=Cell[34].innerHTML;
+
+                    document.getElementById("Percentage").value=Cell[35].innerHTML;
+                    document.getElementById("Result").value=Cell[36].innerHTML;
+
+
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                    modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                    }
+
+
+
+            }
+
+            
+            function myDeleteFunction(ID) {
+
+            var c = document.getElementById("Sclass").value;
+            console.log("Class_"+c);
+            var section = document.getElementById("Ssection").value;
+            console.log("Section_"+section);
+            var term = document.getElementById("STerm").value;
+            console.log(term);
+
+            let Cell = document.getElementById("myTable").rows[ID].cells;
+            let RTBD=Cell[0].innerHTML;
+
+            const docRef = doc(db, "Class_"+c,"Section_"+section,term, RTBD);
+
+            deleteDoc(docRef)
+            .then(() => {
+            console.log("Entire Document has been deleted successfully.");
+            document.getElementById("myTable").deleteRow(ID);
+            })
+            .catch(error => {
+            console.log(error);
+            })
+                            
+            }
+        
+
+            function Fetch(){
+                  //Clearing the already populated table
+                  ClearThePopulatedTable();
+
+                  //initializing variable for next and prev
+                  var lastVisibleStudentSnapShot = {};
+
+
+                    var c = document.getElementById("Sclass").value;
+                    console.log("Class_"+c);
+                    var section = document.getElementById("Ssection").value;
+                    console.log("Section_"+section);
+                    var term = document.getElementById("STerm").value;
+                    console.log(term);
+                   
+                    //Testing to fetch the collection Data
+                    (async () => {
+                    try {
+                        // Query the first page of docs
+                    const colRef = query(collection(db, "Class_"+c,"Section_"+section,term),orderBy("RollNo"));
+                    
+                    const docSnap = await getDocs(colRef);
+                    //Get the last visible document
+                    lastVisibleStudentSnapShot=docSnap.docs[docSnap.docs.length-1];
+                    console.log("The last student info is :",lastVisibleStudentSnapShot.data());
+
+                    
+                    let count=2;
+                    docSnap.forEach(doc => {
+                        console.log(doc.data());
+                        Filling_Table(doc.id,doc.data(),count);
+                        count++;
+                    });   
+                    } catch (error) {
+                    console.log(error);
+                    }
+                    
+
+                  /*  //Adding the Next and the Prev button
+                    let table=document.getElementById("myTable");
+                    let Nextbtn = document.createElement("button");
+                    Nextbtn.innerHTML = "Next";
+                    Nextbtn.type = "submit";
+                    Nextbtn.id="NextBtn";
+                    Nextbtn.name = "NextBtn";
+                    Nextbtn.addEventListener("click", function() {
+                            async()=>{
+                              try{
+                                console.log("Executing Next Button");
+
+                                const colRef = query(collection(db, "Class_"+c,"Section_"+section,term),orderBy("RollNo"),(lastVisibleStudentSnapShot),limit(10));
+                    
+                                const docSnap = await getDocs(colRef);
+                                var lastVisibleStudentSnapShot=docSnap.docs[docSnap.docs.length-1];
+                                console.log("The last student info is :",lastVisibleStudentSnapShot.data());
+                                let count=2;
+                                docSnap.forEach(doc => {
+                                    console.log(doc.data());
+                                    Filling_Table(doc.id,doc.data(),count);
+                                    count++;
+                                });
+
+                              }catch (error) {
+                                    console.log(error);
+                              }
+                              
+                              
+                            }
+                        });
+                    table.appendChild(Nextbtn);
+
+
+
+                    let Prevbtn = document.createElement("button");
+                    Prevbtn.innerHTML = "Prev";
+                    Prevbtn.type = "submit";
+                    Prevbtn.id="PrevBtn";
+                    Prevbtn.name = "PrevBtn";
+                    Prevbtn.addEventListener("click", function() {
+                      async()=>{
+                              try{
+
+                                const colRef = query(collection(db, "Class_"+c,"Section_"+section,term),orderBy("RollNo"),(lastVisibleStudentSnapShot),limit(10));
+                    
+                                const docSnap = await getDocs(colRef);
+
+                              }catch (error) {
+                                    console.log(error);
+                              }
+                              var lastVisibleStudentSnapShot=docSnap.docs[docSnap.docs.length-1];
+                              
+                            }
+                        });
+                    table.appendChild(Prevbtn);*/
+
+                    })();
+            }
+           
+
+            function Filling_Table(R,stu,n){
+                        const rowIdx=n;
+                        let roll=R;
+                        let name=stu.Name;
+                        console.log(R);
+                        console.log(stu.Name);
+                        console.log(stu.Subjects.English.Int_Eng_Marks);
+                        let IE=stu.Subjects.English.Int_Eng_Marks;
+                        let EE=stu.Subjects.English.Ext_Eng_Marks;
+                        let TE=stu.Subjects.English.Total_Eng_Marks;
+
+
+                       let IG= stu.Subjects.Grammar.Int_Gra_Marks;
+                       let EG=stu.Subjects.Grammar.Ext_Gra_Marks;
+                       let TG=stu.Subjects.Grammar.Total_Gra_Marks;
+
+                       let IMIL= stu.Subjects.MIL.Int_MIL_Marks;
+                       let EMIL=stu.Subjects.MIL.Ext_MIL_Marks;
+                       let TMIL=stu.Subjects.MIL.Total_MIL_Marks;
+
+                       let IM=stu.Subjects.Maths.Int_Maths_Marks;
+                       let EM=stu.Subjects.Maths.Ext_Maths_Marks;
+                       let TM=stu.Subjects.Maths.Total_Maths_Marks;
+
+
+                       let ISc= stu.Subjects.Science.Int_Science_Marks;
+                       let ESc=stu.Subjects.Science.Ext_Science_Marks;
+                       let TSc=stu.Subjects.Science.Total_Science_Marks;
+
+
+                       let ISS= stu.Subjects.Social_studies.Int_SocialStudies_Marks;
+                       let ESS=stu.Subjects.Social_studies.Ext_SocialStudies_Marks;
+                       let TSS=stu.Subjects.Social_studies.Total_SocialStudies_Marks;
+
+
+                       let IHE= stu.Subjects.Health.Int_Health_Marks;
+                       let EHE=stu.Subjects.Health.Ext_Health_Marks;
+                       let THE=stu.Subjects.Health.Total_Health_Marks;
+
+
+                       let IHin=stu.Subjects.Hindi.Int_Hindi_Marks;
+                       let EHin=stu.Subjects.Hindi.Ext_Hindi_Marks;
+                       let THin=stu.Subjects.Hindi.Total_Hindi_Marks;
+
+                       let Msc=stu.Msc_Grade;
+                       let Evs=stu.Evs_Grade;
+                       let Gk=stu.GK_Comp_Grade;
+                       let CE=stu.Creative_Expression;
+                       let PT=stu.Physical_Training;
+                       let WE=stu.work_Expression;
+                       let WD=stu.Working_Days;
+                       let Att=stu.Attendence;
+                       let GT=stu.Grand_Total;
+                       let pc=stu.Percentage;
+                       let res=stu.Final_Result;
+
+
+    
+                        const Subject_marks = [roll,name,IE,EE,TE,IG,EG,TG,IMIL,EMIL,TMIL,IM,EM,TM,ISc,ESc,TSc,ISS,ESS,TSS,IHE,EHE,THE,IHin,EHin,THin,Msc,Evs,Gk,CE,PT,WE,WD,Att,GT,pc,res];
+                      
+                        var table = document.getElementById("myTable");
+                        var row = table.insertRow(rowIdx);
+                        var count=0;
+                        var cell1;
+                        for(let i=0;i<Subject_marks.length;i++){
+                           
+
+                                cell1 = row.insertCell(i);
+                                cell1.innerHTML = Subject_marks[count];
+                                count++;
+                                
+                            
+                        }
+
+                        // Creating Edit Button
+                        cell1=row.insertCell(count);
+                        let Editbtn = document.createElement("button");
+                        Editbtn.innerHTML = "Edit";
+                        Editbtn.type = "submit";
+                        Editbtn.id=n;
+                        Editbtn.name = "EditBtn";
+                        Editbtn.addEventListener("click", function() {
+                            myEditFunction(Editbtn.id);
+                        });
+                        cell1.appendChild(Editbtn);
+                        count++;
+
+                         // Creating Delete Button
+                        cell1=row.insertCell(count);
+                        let Delbtn = document.createElement("button");
+                        Delbtn.innerHTML = "Delete";
+                        Delbtn.type = "submit";
+                        Delbtn.id=n;
+                        Delbtn.name = "DeleteBtn";
+                        Delbtn.addEventListener("click", function() {
+                            myDeleteFunction(Delbtn.id);
+                        });
+                        cell1.appendChild(Delbtn);
+
+            }
+           
+
+    </script>
+   
+</body>
+</html>
